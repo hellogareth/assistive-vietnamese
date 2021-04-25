@@ -114,11 +114,11 @@
       sayVN.forEach(function (element) {
         let text = element.value;
         text = encodeURIComponent(text);
+        let url = '//translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=' + text;
+        let audio = element.querySelector('audio').src = url;
 
         element.onclick = function (e) {
           e.preventDefault();
-          let url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=' + text;
-          let audio = element.querySelector('audio').src = url;
           audio.play;
         };
       })
@@ -126,11 +126,11 @@
       sayEN.forEach(function (element) {
         let text = element.value;
         text = encodeURIComponent(text);
+        let url = '//translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=' + text;
+        let audio = element.querySelector('audio').src = url;
 
         element.onclick = function (e) {
           e.preventDefault();
-          let url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=' + text;
-          let audio = element.querySelector('audio').src = url;
           audio.play;
         };
       })

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vietnamese Lesson 1</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <h1>Vietnamese Lesson 1</h1>
+    <section>
+      <h1>Basics Of Vietnamese</h1>
+      <h2>Tones</h2>
+
+      <ol>
+        <li>
+          A
+          <button class="sayEN" value="A">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="A">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+        <li>Á
+          <button class="sayEN" value="Á">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="Á">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+        <li>À
+
+          <button class="sayEN" value="À">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="À">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+        <li>Ã
+          <button class="sayEN" value="Ã">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="Ã">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+        <li>Ả
+
+          <button class="sayEN" value="A. question">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="Ả">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+        <li>Ạ
+
+          <button class="sayEN" value="A. short">
+            Say in English
+            <audio src="" controls>
+          </button>
+
+          <button class="sayVN" value="Ạ">
+            Say in Vietnamese
+            <audio src="" controls>
+          </button>
+        </li>
+
+      </ol>
+    </section>
+  </main>
+
+  <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const sayVN = document.querySelectorAll('.sayVN');
+      const sayEN = document.querySelectorAll('.sayEN');
+
+      sayVN.forEach(function (element) {
+        let text = element.value;
+        text = encodeURIComponent(text);
+        let url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=' + text;
+        let audio = element.querySelector('audio').src = url;
+
+        element.onclick = function (e) {
+          e.preventDefault();
+          audio.play;
+        };
+      })
+
+      sayEN.forEach(function (element) {
+        let text = element.value;
+        text = encodeURIComponent(text);
+        let url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=' + text;
+        let audio = element.querySelector('audio').src = url;
+
+        if (text == "Ả")
+
+          element.onclick = function (e) {
+            e.preventDefault();
+            audio.play;
+          };
+      })
+    });
+
+  </script>
+</body>
+
+</html>
